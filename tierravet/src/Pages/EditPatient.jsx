@@ -1,18 +1,68 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
-    faDog, 
-    faCat, 
+    faDog,  
     faFloppyDisk,
-    faPenToSquare
+    faHouseChimney,
+    faPenToSquare,
+    faPersonWalkingArrowRight
  } from "@fortawesome/free-solid-svg-icons";
 
 const EditPatient = () => {
   return (
     <>
       <div className="bg-primary">
-        <Navbar />
+        <div>
+          <div className="flex justify-between pt-4 ml-6 mr-6">
+            <img
+              src="https://s3-alpha-sig.figma.com/img/226f/96ef/def22b71dcb004d652b323420dd58ddb?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dKDbvfQXX521b7tMopxAanxInjEv6CwQcKpRdVs-hsLS9Cyhg18A~W~h3anI8FfTHEDtMmXuhqfNJO1uvqEikTpO0biJFm2-f8~EXQOkNAWP058k59VtnNXzh0dK8Z6PtmwRInxlDI7frG42Xra356T3pa1C~G9TXLVPMtkrtZnxruQC34kHh-PWB9PUnP347GgpSyQxHgr8Eob36984pTb5J-Aro2HJ8FJDpqfJ6tSMt9Uxb8CwAaDbIHTiB1zJdOrppF5S27C171LhWjlyekzv3b3Tfi0-CcYAV8eawtSVdhXF5BmzLPa1FDEpBeRBHbqZGiEc6bfWmEtB~-HUpg__"
+              alt="logo"
+              className="max-w-20 "
+            />
+            <FontAwesomeIcon
+              icon={faPersonWalkingArrowRight}
+              className="text-secondary mt-6 mr-6 text-5xl"
+            />
+          </div>
+          <nav className="flex justify-center p-4 font-sans text-2xl text-secondary divide-x-2">
+            <a
+              href="/users-list"
+              className="font-medium  hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
+            >
+              <FontAwesomeIcon icon={faHouseChimney} />
+            </a>
+            <a
+              href="/patients-list"
+              className="font-medium ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
+            >
+              Pacientes
+            </a>
+            <a
+              href="/clinic-history"
+              className="font-medium ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
+            >
+              Consultas
+            </a>
+            <a
+              href="/prescription"
+              className="font-medium ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
+            >
+              Fórmulas
+            </a>
+            <a
+              href="/referrals"
+              className="font-medium ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
+            >
+              Remisiones
+            </a>
+            <a
+              href="/telehealth"
+              className="font-medium ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
+            >
+              Telemedicina
+            </a>
+          </nav>
+        </div>
 
         <div className="mt-20 ml-20">
           <FontAwesomeIcon icon={faDog} className="text-secondary text-2xl" />
@@ -35,7 +85,10 @@ const EditPatient = () => {
             <div className="bg-tertiary rounded-full p-16">
               <FontAwesomeIcon icon={faDog} className="text-white text-8xl" />
             </div>
-            <FontAwesomeIcon icon={faPenToSquare} className=" text-2xl mt-40 ml-40 absolute" />
+            <FontAwesomeIcon
+              icon={faPenToSquare}
+              className=" text-2xl mt-40 ml-40 absolute"
+            />
           </div>
 
           <label className="block ml-16 mr-16 relative">
@@ -77,7 +130,7 @@ const EditPatient = () => {
               Sexo:
             </span>
             <span className="absolute inset-0 mt-2 mr-60 justify-end flex text-lg">
-                microchip:
+              microchip:
             </span>
           </label>
         </div>
