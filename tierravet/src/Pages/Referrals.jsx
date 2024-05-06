@@ -3,58 +3,59 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDog,
   faCat,
-  faHospital,
+  faFile,
   faFloppyDisk,
+  faFileAlt,
+  faCommentAlt,
+  faFolder,
+  faPenToSquare
 } from "@fortawesome/free-solid-svg-icons";
 
-const Procedure = () => {
+const Referrals = () => {
   return (
     <>
-      <div className="bg-primary w-full">
+      <div className="bg-primary h-[100vh]">
         <Navbar />
-
-        <label className="flex justify-center">
+        <div className="flex justify-center space-x-24">
+        <label className="flex justify-center relative">
           <div className="absolute mr-60 pointer-events-none">
             <FontAwesomeIcon
-              icon={faHospital}
+              icon={faFile}
               className="text-white mt-16 text-2xl pl-12 py-6"
             />
           </div>
           <input
             type="text"
             name="new-control"
-            className=" mt-20 pl-14 py-2 text-center bg-secondary border shadow-lg border-secondary placeholder-white focus:outline-none focus:border-secondary focus:ring-secondary block  rounded-xl sm:text-xl focus:ring-1"
-            placeholder="NUEVO CONTROL"
+            className=" mt-20 mb-10 pl-14 py-2 text-center bg-secondary border shadow-lg border-secondary placeholder-white focus:outline-none focus:border-secondary focus:ring-secondary block  rounded-xl sm:text-xl focus:ring-1"
+            placeholder="NUEVA REMISIÓN"
           />
         </label>
-
-        <nav className="flex justify-center p-4 font-sans text-2xl text-secondary divide-x-2 mt-10">
-          <a
-            href="/users-list"
-            className=" hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
-          >
-            General
-          </a>
-          <a
-            href="/patients-list"
-            className=" ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
-          >
-            Control / Procedimiento
-          </a>
-          <a
-            href="/clinic-history"
-            className=" ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
-          >
-            Vacunación y desparasitación
-          </a>
-        </nav>
-
+        <label className="flex justify-center relative">
+          <div className="absolute mr-60 pointer-events-none">
+            <FontAwesomeIcon
+              icon={faFolder}
+              className="text-white mt-16 text-2xl pl-12 py-6"
+            />
+          </div>
+          <input
+            type="text"
+            name="new-control"
+            className=" mt-20 mb-10 pl-14 py-2 text-center bg-secondary border shadow-lg border-secondary placeholder-white focus:outline-none focus:border-secondary focus:ring-secondary block  rounded-xl sm:text-xl focus:ring-1"
+            placeholder="ADJUNTAR HISTORIA"
+          />
+        </label>
+        </div>
+        <div className="absolute right-10 mb-10">
+            <FontAwesomeIcon icon={faFileAlt} className="text-black text-2xl mr-5" />
+            <FontAwesomeIcon icon={faCommentAlt} className="text-black text-2xl mr-8" />
+          </div>
         <div>
           <label className="block ml-16 mr-16 relative">
             <input
               type="text"
               name="user1"
-              className="mt-4 w-full px-20 py-2 block placeholder-black bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 "
+              className="mt-12 w-full px-20 py-2 block placeholder-black bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 "
               placeholder="HC #: 00000"
             />
             <span className="absolute inset-0 mt-2 mr-10 flex justify-end text-lg">
@@ -109,44 +110,16 @@ const Procedure = () => {
         </div>
 
         <div className="block mt-4 ml-16 mr-16 relative  bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
-          <p className="text-lg flex justify-center mt-2 ">EXÁMEN FÍSICO</p>
-          <span className="flex justify-center mt-6 ml-8">
-            <p className="mr-20">T: ____ °C</p>
-            <p className="mr-20">FC: ____ LPM</p>
-            <p className="mr-20">FR: ____ RPM</p>
-            <p className="ml-20">SPO2: ____ %</p>
-            <p className="ml-20">TLLC: ____ SEG</p>
-          </span>
-          <span className="flex justify-center mt-4 ml-8">
-            <p className="mr-20">GLUCOMETRÍA: ____ MG/DL</p>
-            <p className="mr-20">PA: ____/____ MMHG</p>
-            <p className="mr-20">MUCOSAS: __ __ __</p>
-            <p>CC: ____/____</p>
-          </span>
-          <p className="text-lg ml-8 mt-4 mb-40">Observaciones:</p>
+          <p className="text-lg flex justify-center mt-6 ">REMISIÓN MÉDICA</p>
+          <p className="text-lg ml-8 pt-16 mb-32">Motivo de la remisión:</p>
         </div>
-
-        <div className="block mt-4 ml-16 mr-16 relative  bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
-          <p className="text-lg flex justify-center mt-2 ">
-            NOTAS DE ENFERMERÍA
-          </p>
-          <span className="">
-            <p className="ml-8 mt-20">Medicamentos administrados:</p>
-            <p className="ml-8 mt-20">Procedimiento realizado:</p>
-            <p className="ml-8 mt-40 mb-40">Observaciones:</p>
-          </span>
-        </div>
-
-        <div className="block mt-4 ml-16 mr-16 relative  bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
-          <p className="text-lg flex justify-center mt-2 mb-60">EVOLUCIÓN</p>
-        </div>
-
         <div className="flex justify-end mt-2 mr-10">
           <FontAwesomeIcon icon={faFloppyDisk} className=" text-3xl mr-12" />
+          <FontAwesomeIcon icon={faPenToSquare} className=" text-3xl mr-12" />
         </div>
       </div>
     </>
   );
 };
 
-export default Procedure;
+export default Referrals;
