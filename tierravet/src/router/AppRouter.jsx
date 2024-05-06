@@ -7,6 +7,7 @@ import EditUser from '../Pages/EditUser';
 import EditPatient from '../Pages/EditPatient';
 import PatientInformation from '../Pages/PatientInformation';
 import Users from '../Pages/UsersList';
+import Vaccination from '../Pages/Vaccination';
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
         <Route path='edit-patient' element={<EditPatient/>}/>
         <Route path='patient-information' element={<PatientInformation/>}/>
         <Route path='users-list' element={<Users/>} />
+        <Route path='vaccination' element={<Vaccination/>}/>
       </Routes>
     </Router>
   );
