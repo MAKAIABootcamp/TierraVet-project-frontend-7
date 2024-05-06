@@ -6,6 +6,7 @@ import Login from '../Pages/Login';
 import EditUser from '../Pages/EditUser';
 import EditPatient from '../Pages/EditPatient';
 import PatientInformation from '../Pages/PatientInformation';
+import Users from '../Pages/UsersList';
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
         <Route path='edit-user' element={<EditUser/>}/>
         <Route path='edit-patient' element={<EditPatient/>}/>
         <Route path='patient-information' element={<PatientInformation/>}/>
+        <Route path='users-list' element={<Users/>} />
       </Routes>
     </Router>
   );
