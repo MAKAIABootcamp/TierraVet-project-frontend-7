@@ -1,13 +1,8 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDog,
   faCat,
-  faHeartPulse,
-  faFlask,
-  faViruses,
-  faSyringe,
   faHospital,
   faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";

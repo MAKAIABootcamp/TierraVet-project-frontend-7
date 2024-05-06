@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,7 +7,6 @@ import {
   faFlask,
   faViruses,
   faSyringe,
-  faClinicMedical,
   faHospital,
   faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
