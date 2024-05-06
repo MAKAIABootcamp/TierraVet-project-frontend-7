@@ -1,4 +1,3 @@
-// AppRouter.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../Pages/Home'; 
 import AboutUs from '../Pages/AboutUs'
@@ -8,6 +7,7 @@ import EditPatient from '../Pages/EditPatient';
 import PatientInformation from '../Pages/PatientInformation';
 import Users from '../Pages/UsersList';
 import Vaccination from '../Pages/Vaccination';
+import Patients from '../Pages/PatientsList';
 
 const AppRouter = () => {
   return (
@@ -21,6 +21,7 @@ const AppRouter = () => {
         <Route path='patient-information' element={<PatientInformation/>}/>
         <Route path='users-list' element={<Users/>} />
         <Route path='vaccination' element={<Vaccination/>}/>
+        <Route path='patients-list' element={<Patients/>} />
       </Routes>
     </Router>
   );
