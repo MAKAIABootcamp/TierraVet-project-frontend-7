@@ -1,14 +1,14 @@
 // AppRouter.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../Pages/Home'; 
-import ClinicHistory from '../Pages/ClinicHistory';
+import Procedure from '../Pages/Procedure';
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path='clinic-history' element={<ClinicHistory/>}/>
+        <Route path='procedure' element={<Procedure/>}/>
       </Routes>
     </Router>
   );
