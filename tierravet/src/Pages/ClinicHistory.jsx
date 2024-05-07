@@ -10,6 +10,7 @@ import {
   faHospital,
   faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../components/Footer";
 
 const ClinicHistory = () => {
   return (
@@ -18,18 +19,12 @@ const ClinicHistory = () => {
         <Navbar />
 
         <label className="flex justify-center">
-          <div className="absolute mr-60 pointer-events-none">
-            <FontAwesomeIcon
-              icon={faHeartPulse}
-              className="text-white mt-16 text-2xl pl-12 py-6"
-            />
+          <div>
+            <button className="bg-secondary shadow-lg mb-4 mt-10 hover:bg-primary text-white py-3 px-16 lg:text-left lg:inline-block lg:mr-2 rounded-xl sm:text-2xl">
+              <FontAwesomeIcon icon={faHeartPulse} className="mr-2" /> Nueva
+              consulta
+            </button>
           </div>
-          <input
-            type="text"
-            name="new-consult"
-            className=" mt-20 pl-14 py-2 text-center bg-secondary border shadow-lg border-secondary placeholder-white focus:outline-none focus:border-secondary focus:ring-secondary block  rounded-xl sm:text-xl focus:ring-1"
-            placeholder="NUEVA CONSULTA"
-          />
         </label>
 
         <nav className="flex justify-center p-4 font-sans text-2xl text-secondary divide-x-2 mt-10">
@@ -205,10 +200,7 @@ const ClinicHistory = () => {
         </div>
 
         <div className="flex justify-end mt-2 mr-10">
-            <FontAwesomeIcon
-            icon={faFloppyDisk}
-            className=" text-3xl mr-12"
-            />
+          <FontAwesomeIcon icon={faFloppyDisk} className=" text-3xl mr-12" />
         </div>
 
         <label className="flex ml-16">
@@ -267,6 +259,7 @@ const ClinicHistory = () => {
             placeholder="TRATAMIENTO"
           />
         </label>
+        <Footer/>
       </div>
     </>
   );
