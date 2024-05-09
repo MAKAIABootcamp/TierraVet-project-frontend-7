@@ -1,3 +1,4 @@
+import React from "react";
 import NavbarHome from "../components/NavbarHome";
 import Landpage from "../components/LandPage";
 import Services from "../components/Services";

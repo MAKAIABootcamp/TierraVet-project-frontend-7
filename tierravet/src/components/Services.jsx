@@ -1,3 +1,4 @@
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserDoctor, faSuitcaseMedical, faDog } from '@fortawesome/free-solid-svg-icons'; // Importa los iconos que necesitas
 

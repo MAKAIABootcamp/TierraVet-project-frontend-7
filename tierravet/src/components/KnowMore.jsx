@@ -1,3 +1,5 @@
+import React from "react";
+
 const KnowMore = () => {
     return (
       <div className="relative mt-20">

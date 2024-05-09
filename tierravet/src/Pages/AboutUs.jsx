@@ -1,3 +1,4 @@
+import React from "react";
 import NavbarHome from "../components/NavbarHome";
 import KnowMore from "../components/KnowMore";
 import AboutUs from "../components/AboutUs";

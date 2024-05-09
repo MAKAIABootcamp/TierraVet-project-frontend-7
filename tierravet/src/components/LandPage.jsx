@@ -1,3 +1,5 @@
+import React from "react";
+
 const Landpage = () => {
     return (
       <div className="flex flex-col lg:flex-row justify-center items-center bg-primary p-8 mt-20 pb-0">

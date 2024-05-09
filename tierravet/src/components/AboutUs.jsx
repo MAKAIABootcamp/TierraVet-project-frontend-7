@@ -1,3 +1,5 @@
+import React from "react";
+
 const AboutUs = () => {
     return (
       <div className="flex justify-center items-center p-8">

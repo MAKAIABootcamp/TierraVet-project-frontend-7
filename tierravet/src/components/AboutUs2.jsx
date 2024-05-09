@@ -1,3 +1,5 @@
+import React from "react";
+
 const AboutUs2 = () => {
     return (
       <div className="flex flex-col lg:flex-row justify-center items-center p-8">
