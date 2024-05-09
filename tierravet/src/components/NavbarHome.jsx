@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const NavbarHome = () => {
+  const navigate = useNavigate();
+
+  const handleNavigateToLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <nav className="bg-secondary fixed top-0 left-0 w-full flex justify-between items-center px-6 py-3 z-50">
       <div className="ml-4">
@@ -9,7 +17,10 @@ const NavbarHome = () => {
         />
       </div>
       <div className="mr-4">
-        <button className="bg-blue-300 hover:bg-blue-400 text-white py-2 px-7 rounded-lg">
+        <button
+          className="bg-blue-300 hover:bg-blue-400 text-white py-2 px-7 rounded-lg"
+          onClick={handleNavigateToLogin}
+        >
           Ingresar
         </button>
       </div>
