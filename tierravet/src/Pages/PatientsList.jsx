@@ -15,7 +15,7 @@ import {
 const Patients = () => {
   return (
     <div className="bg-primary">
-      <Navbar />
+
 
       <label className="flex ml-52 mr-52 justify-between relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
