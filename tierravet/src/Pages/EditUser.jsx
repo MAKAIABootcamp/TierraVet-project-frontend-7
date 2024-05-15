@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFloppyDisk,
@@ -12,8 +11,6 @@ const EditUser = () => {
   return (
     <>
       <div className="bg-primary">
-        <Navbar />
-
         <div className="mt-20 ml-20">
           <FontAwesomeIcon icon={faUserDoctor} className="text-secondary text-2xl" />
           <span className="text-xl ml-2">Esp.</span>

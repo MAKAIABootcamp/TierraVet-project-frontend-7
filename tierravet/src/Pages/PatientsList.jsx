@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -15,8 +14,6 @@ import {
 const Patients = () => {
   return (
     <div className="bg-primary">
-
-
       <label className="flex ml-52 mr-52 justify-between relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <FontAwesomeIcon

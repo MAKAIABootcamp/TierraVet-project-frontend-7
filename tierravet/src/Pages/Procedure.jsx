@@ -12,8 +12,6 @@ const Procedure = () => {
   return (
     <>
       <div className="bg-primary w-full">
-        <Navbar />
-
         <label className="flex justify-center">
           <div className="absolute mr-60 pointer-events-none">
             <FontAwesomeIcon

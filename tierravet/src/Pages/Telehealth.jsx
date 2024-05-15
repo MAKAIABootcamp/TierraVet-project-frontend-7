@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
@@ -8,15 +7,12 @@ import {
   faTruckMedical,
 } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "../components/Calendar";
-import Footer from "../components/Footer";
 
 const Telehealth = () => {
   return (
     <>
       <div className="bg-primary">
-        <Navbar />
-
-        <div className="flex justify-center mt-10 gap-60">
+        <div className="flex justify-center gap-60">
           <button className="bg-secondary shadow-lg mb-4 hover:bg-primary text-white py-3 px-16 mt-4 lg:text-left lg:inline-block lg:mr-2 rounded-xl sm:text-2xl">
             <FontAwesomeIcon icon={faCalendarDays} className="mr-2" /> Agenda
           </button>
@@ -112,7 +108,6 @@ const Telehealth = () => {
             </div>
           </div>
         </div>
-        <Footer/>
       </div>
     </>
   );

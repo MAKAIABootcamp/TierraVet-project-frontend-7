@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDog,
@@ -17,8 +16,6 @@ const ClinicHistory = () => {
   return (
     <>
       <div className="bg-primary">
-        <Navbar />
-
         <label className="flex justify-center">
           <div>
             <button className="bg-secondary shadow-lg mb-4 mt-10 hover:bg-primary text-white py-3 px-16 lg:text-left lg:inline-block lg:mr-2 rounded-xl sm:text-2xl">
@@ -260,7 +257,6 @@ const ClinicHistory = () => {
             placeholder="TRATAMIENTO"
           />
         </label>
-        <Footer/>
       </div>
     </>
   );

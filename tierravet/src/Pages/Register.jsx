@@ -74,7 +74,7 @@ const Register = () => {
     <div className="flex h-screen justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-md border border-secondary flex flex-col items-center sm:w-80 md:w-96">
         <img
-          src="https://s3-alpha-sig.figma.com/img/226f/96ef/def22b71dcb004d652b323420dd58ddb?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dKDbvfQXX521b7tMopxAanxInjEv6CwQcKpRdVs-hsLS9Cyhg18A~W~h3anI8FfTHEDtMmXuhqfNJO1uvqEikTpO0biJFm2-f8~EXQOkNAWP058k59VtnNXzh0dK8Z6PtmwRInxlDI7frG42Xra356T3pa1C~G9TXLVPMtkrtZnxruQC34kHh-PWB9PUnP347GgpSyQxHgr8Eob36984pTb5J-Aro2HJ8FJDpqfJ6tSMt9Uxb8CwAaDbIHTiB1zJdOrppF5S27C171LhWjlyekzv3b3Tfi0-CcYAV8eawtSVdhXF5BmzLPa1FDEpBeRBHbqZGiEc6bfWmEtB~-HUpg__"
+          src="https://s3-alpha-sig.figma.com/img/226f/96ef/def22b71dcb004d652b323420dd58ddb?Expires=1716768000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k2Kw95g4bKG4~RGGuxsJr950HTtBWGY0e8jXz-e1W-G~VdBWfWL0arLyXB3EX77~IC60O~QNhflnlHDrRrWmI60Eb-tQx~DZJUSTrgQx~ZLXkA8hQMPXh8a9DOn-4yxiiga5yWFl51Uh5DEg-oR2Ty6ofIkRYRABqcNjV7IYnTXubfB55AM~P8LFZnXIhk2dHaBEQwPkPGhC0hfdbJFeNOn9URnXpt6dkBag0CI6eVffczne9bcmm~Vf5v~0xPzdKTjSo8IMuOxP0FTUM38AiJkaVjqFHCjB1yA087q6T3OfzGhE~-zXul0lt60HVPHeDWHCIP9i4Ebap16OTQ-cew__"
           alt="Logo"
           className="h-48 mb-4"
         />

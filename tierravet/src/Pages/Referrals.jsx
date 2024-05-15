@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDog,
@@ -15,8 +14,7 @@ import {
 const Referrals = () => {
   return (
     <>
-      <div className="bg-primary h-[100vh]">
-        <Navbar />
+      <div className="bg-primary ">
         <div className="flex justify-center space-x-24">
         <label className="flex justify-center relative">
           <div className="absolute mr-60 pointer-events-none">

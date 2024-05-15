@@ -8,7 +8,7 @@ const Contact = () => {
           <div className="flex flex-col lg:flex-row">
             {/* Imagen */}
             <div className="w-full lg:w-[630px] mb-8 lg:pr-4 lg:mr-28">
-              <img src="https://s3-alpha-sig.figma.com/img/3a02/0ffb/31b94a7733a7843935108ba2fca6f213?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=i2t2Y0KfkaY4k5AGNNHYtptMcUmpYDLXLecXKTixlbJ3I-YH2FOW4674vVZ77zlmaG4-ioIqLYDBQxMN4s557MHNrauPdWo~9SyDS7ps7AS3S66qvtlH9tbPVx0Zrd9w2PaJ2C-pi12SFLLnAwHp-ybahaQtew5q7EbVcfW-piajcBMLwQNpkE~jKTizhIRUpoaJdYsmKLWmH2~FBsl7zCRHBO7r2klE33toQ~6kcdiNmt67MT8gydOZ6PTkZXrGDDMuKsYWk-p9aM-cm4rtX-NqTQobilEFIOX7pTr2E3TmAtqKnJM81dMLrBsYILLeUxcBhw14gRRc7wazWFy~sg__" alt="Contacto" className="w-full h-full rounded-lg" />
+              <img src="https://s3-alpha-sig.figma.com/img/3a02/0ffb/31b94a7733a7843935108ba2fca6f213?Expires=1716768000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=j9TLk3vpLbjpuFv9~kSi0CL0EMh4jbMvW7EMwZqfPQSgKpb5B2wytsorm69qqED2ksckIvl40iG8uQ9PmZnTJKqN1H0FrXXvNCnxf5sa9tGEE1G9ztBCMVfWHbCjpUP8m1jXHQl65R-MjCXnUpB7pU3IocIfw2ECHqMc9WYpm8Udb~~Dr6vHLXIDmqlww7wRAgofOPWbFVsqVaSWZETrwMyGFO490e3V837sETAv28Ng4IAYgVM0w8~~mVmbpy65d7qOidLpZGzoXZfNzwlNDKkm~baBJOXZiRWH~W-7tqjmhtYU6SaoyfKuJZdDTfE~3qG4Xt6PXzU0qa5ljk3m5A__" alt="Contacto" className="w-full h-full rounded-lg" />
             </div>
             {/* Formulario */}
             <div className="w-full lg:w-[400px] h-[450px] bg-primary rounded-lg pl-4 mt-20">

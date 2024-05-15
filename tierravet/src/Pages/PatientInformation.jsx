@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFloppyDisk,
@@ -15,8 +14,6 @@ const PatientInformation = () => {
   return (
     <>
       <div className="bg-primary">
-        <Navbar />
-
         <div className="block mt-20 ml-20 ">
           <FontAwesomeIcon
             icon={faDog}

@@ -14,9 +14,7 @@ import {
 const Prescription = () => {
   return (
     <>
-      <div className="bg-primary h-[100vh]">
-        <Navbar />
-
+      <div className="bg-primary">
         <label className="flex justify-center relative">
           <div className="absolute mr-60 pointer-events-none">
             <FontAwesomeIcon

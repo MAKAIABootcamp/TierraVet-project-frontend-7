@@ -14,8 +14,6 @@ const Vaccination = () => {
     return (
         <>
         <div className="bg-primary">
-        <Navbar />
-
         <label className="flex justify-center">
           <div className="absolute mr-60 pointer-events-none">
             <FontAwesomeIcon
@@ -163,7 +161,6 @@ const Vaccination = () => {
             </p>
           </span>
         </div>
-
         <div className="flex justify-end mt-2 mr-10">
           <FontAwesomeIcon icon={faFloppyDisk} className=" text-3xl mr-12" />
         </div>

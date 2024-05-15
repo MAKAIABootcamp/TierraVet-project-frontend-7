@@ -12,7 +12,7 @@ const Landpage = () => {
         </div>
   
         <div className="w-full lg:w-1/3 mt-8 lg:mt-0">
-          <img src="https://s3-alpha-sig.figma.com/img/e168/2903/a20f5cfd8706566500ccc801a2f1452f?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DclA6rB8sqov~C5HIrnEAgsGYnikMvmwab7bT0MRx2~JjZWBfuiswFWotLL0v0hO-rMGA7pwQlbWjBYEM5cDpCPjJQgeDGEk61GIMNRej3W9lgA8X~m6LW88DHHzFMkVR19cBxPrqavPcUL7h7x6VtZzIgEeJledc2cZIoSJQOUkF5HbByU75I7r3SHiMFOCP1SEEa8Vj1C9om~76OLcl-wofjXzaiUN7iHlN7DZejhRi74cXfvG54dQHloLGEQYVswFV8~cgM80g0voOM5HDvaPAWfRkOpk6SgQeDt-pBhPv~lSDoDrSBIEa4IRibJ~Q6POXb2VDsFaU43d4aZLow__" alt="Imagen" className="max-w-full h-58" />
+          <img src="https://s3-alpha-sig.figma.com/img/e168/2903/a20f5cfd8706566500ccc801a2f1452f?Expires=1716768000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CE5hsfG4XxijJOaEPvmWTl4Dg-8L3eUsDq4BhMAbiC~PhDirmzqCLdDldV-VsAaOVwB~CtchwvPL08FDG9zAa~7UbJn0U6u76UjgRRREYTqZ2Cur4nSLLJse-1PfDKHsaGKteoJ4Tl4YqnmvhAWGhl6I82ANcjWOAWafH7kSafngcElqlU660t~k3ccfw4uXNw-6QsRz2-9uo0rtejJ0cyvOlednBvBtCnxynWnh873XSHSNWX4PG5lTDyzB79U3LYTmlrTjDfcJG4oBD6Sp2RYfjfKo-jvAjTKq7-cdypZlxBcTqlAt90UXCPaJhs37juVXgFbtIyjVg0y7g2tF6w__" alt="Imagen" className="max-w-full h-58" />
         </div>
       </div>
     );
