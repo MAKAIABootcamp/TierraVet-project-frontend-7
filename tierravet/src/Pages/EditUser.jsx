@@ -79,7 +79,6 @@ const EditUser = () => {
             <p className="mt-40 ml-10">Firma Digital: ___________________________</p>
             <p className="mt-2 ml-20">Catalina Yepes MV Esp. en Felinos</p>
             <p className="mt-1 mb-2 flex justify-center">TP: 123456</p>
-
         </div>
 
         <div className="flex justify-end mt-2 mr-10">
