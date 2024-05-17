@@ -32,9 +32,11 @@ export const actionLoginWithEmailAndPassword = ({ email, password }) => {
           email: email,
         })
       );
+      return { success: true }; // Indica que el inicio de sesión fue exitoso
     } catch (error) {
       console.error(error);
       dispatch(loginFail(error.message));
+      return { success: false }; // Indica que el inicio de sesión falló
     }
   };
 };

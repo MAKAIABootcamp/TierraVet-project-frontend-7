@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionLoginWithEmailAndPassword, actionLoginWithGoogle } from '../redux/auth/userAuthActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLock, faUserPlus, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faLock, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import Cargando from "../components/Cargando";
 import Swal from 'sweetalert2';
 
@@ -26,27 +26,44 @@ const Login = () => {
       password: Yup.string().required("Debe digitar una contraseña"),
     }),
     onSubmit: async (values) => {
-      dispatch(actionLoginWithEmailAndPassword(values)).then((response) => {
-        if (response.error) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: response.error,
-          });
+      try {
+        const response = await dispatch(actionLoginWithEmailAndPassword(values));
+        
+        if (response.success) {
+          showSuccessAlert();
         } else {
-          Swal.fire({
-            icon: 'success',
-            title: 'Inicio de sesión exitoso',
-          }).then(() => {
-            navigate('/app/patients-list');
-          });
+          throw new Error('Credenciales incorrectas');
         }
-      });
+      } catch (error) {
+        await Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.message || 'Ocurrió un error inesperado',
+        });
+      }
     },
+    
   });
 
-  const handleGoogleSignIn = () => {
-    dispatch(actionLoginWithGoogle());
+  const handleGoogleSignIn = async () => {
+    try {
+      await dispatch(actionLoginWithGoogle());
+      showSuccessAlert();
+    } catch (error) {
+      await Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Ocurrió un error al iniciar sesión con Google',
+      });
+    }
+  };
+
+  const showSuccessAlert = async () => {
+    await Swal.fire({
+      icon: 'success',
+      title: `Bienvenido`,
+      confirmButtonText: 'OK',
+    });
   };
 
   return (
@@ -101,4 +118,4 @@ const Login = () => {
   );
 }
 
-export default Login
+export default Login;
