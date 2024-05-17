@@ -6,7 +6,6 @@ import Graphic from "../components/Graphic";
 const Statistics = () => {
     return (
         <div className="bg-primary">
-            <Navbar/>
             <Graphic/>
         </div>
     )

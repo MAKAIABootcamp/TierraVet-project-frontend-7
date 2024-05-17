@@ -7,6 +7,7 @@ import {
   faHospital,
   faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
 const Procedure = () => {
   return (
@@ -28,24 +29,27 @@ const Procedure = () => {
         </label>
 
         <nav className="flex justify-center p-4 font-sans text-2xl text-secondary divide-x-2 mt-10">
-          <a
-            href="/users-list"
-            className=" hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
-          >
-            General
-          </a>
-          <a
-            href="/patients-list"
-            className=" ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
-          >
-            Control / Procedimiento
-          </a>
-          <a
-            href="/clinic-history"
-            className=" ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2 "
-          >
-            Vacunación y desparasitación
-          </a>
+          <NavLink
+          to="/clinic-history"
+          className="font-medium hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2"
+          activeClassName="text-white bg-secondary"
+        >
+          General
+        </NavLink>
+        <NavLink
+          to="/procedure"
+          className="font-medium ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2"
+          activeClassName="text-white bg-secondary"
+        >
+          Control / procedimiento
+        </NavLink>
+        <NavLink
+          to="/vaccination"
+          className="font-medium ml-6 pl-6 hover:bg-secondary hover:text-white hover:shadow-lg hover:rounded-lg hover:px-8 hover:py-2"
+          activeClassName="text-white bg-secondary"
+        >
+          Vacunación y desparasitación
+        </NavLink>
         </nav>
 
         <div>

@@ -15,6 +15,7 @@ import Register from "../Pages/Register";
 import Telehealth from "../Pages/Telehealth";
 import UsersList from "../Pages/UsersList"; // Cambio aquí
 import Vaccination from "../Pages/Vaccination";
+import Statistics from "../Pages/Statistics";
 import Layout from "../components/Layout";
 import { auth } from "../firebase/firebaseConfig";
 import { useDispatch, useSelector } from "react-redux";
@@ -74,6 +75,7 @@ const AppRouter = () => {
           <Route path="referrals" element={<Referrals />} />
           <Route path="telehealth" element={<Telehealth />} />
           <Route path="vaccination" element={<Vaccination />} />
+          <Route path="statistics" element={<Statistics/>} />
         </Route>
       </Route>
     </Routes>
