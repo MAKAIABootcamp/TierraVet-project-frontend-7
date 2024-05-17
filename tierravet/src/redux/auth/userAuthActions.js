@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup } from "firebase/auth";
 import { loginFail, loginRequest, loginSuccess, logout } from "./authSlice";
-import { auth } from "../../firebase/firebaseConfig";
+import { auth, googleProvider } from "../../firebase/firebaseConfig";
 
 export const actionRegisterWithEmailAndPassword = ({ email, password, name }) => {
   return async (dispatch) => {
@@ -45,6 +45,24 @@ export const actionLogout = () => {
     try {
       await signOut(auth);
       dispatch(logout());
+    } catch (error) {
+      console.error(error);
+      dispatch(loginFail(error.message));
+    }
+  };
+};
+
+export const actionLoginWithGoogle = () => {
+  return async (dispatch) => {
+    dispatch(loginRequest());
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      dispatch(
+        loginSuccess({
+          id: result.user.uid,
+          email: result.user.email,
+        })
+      );
     } catch (error) {
       console.error(error);
       dispatch(loginFail(error.message));
