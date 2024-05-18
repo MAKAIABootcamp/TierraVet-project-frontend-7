@@ -12,8 +12,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { useFormik } from "formik";
+import { actionAddPatient } from "../redux/patients/patientActions";
+import { useDispatch } from "react-redux";
 
 const ClinicHistory = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       hcNumber: "",
@@ -51,8 +54,10 @@ const ClinicHistory = () => {
       cc: "",
       observations: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       console.log(values);
+      dispatch(actionAddPatient(values));
+      alert("Paciente guardado de forma exitosa");
     },
   });
 
@@ -122,6 +127,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.patientName}
+                {...formik.getFieldProps("patientName")}
               />
               <div className="absolute inset-0 mt-2 mr-24 flex justify-end">
                 <FontAwesomeIcon
@@ -149,6 +155,7 @@ const ClinicHistory = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.tutorName}
+                  {...formik.getFieldProps("tutorName")}
                 />
               </div>
               <div className="relative flex-1">
@@ -162,6 +169,7 @@ const ClinicHistory = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.tutorId}
+                  {...formik.getFieldProps("tutorId")}
                 />
               </div>
             </div>
@@ -178,6 +186,7 @@ const ClinicHistory = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.phoneNumber1}
+                  {...formik.getFieldProps("phoneNumber1")}
                 />
               </div>
               <div className="relative flex-1">
@@ -191,6 +200,7 @@ const ClinicHistory = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.phoneNumber2}
+                  {...formik.getFieldProps("phoneNumber2")}
                 />
               </div>
               <div className="relative flex-1">
@@ -204,13 +214,12 @@ const ClinicHistory = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.email}
+                  {...formik.getFieldProps("email")}
                 />
               </div>
             </div>
           </div>
-        </form>
 
-        <form onSubmit={formik.handleSubmit}>
           <div className="block mt-4 ml-16 mr-16 relative  bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1">
             <p className="text-lg flex justify-center mt-2">ANAMNESIS</p>
             <span className="flex mt-4 ml-8">
@@ -222,6 +231,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.age}
+                {...formik.getFieldProps("age")}
               />
               <p className="mr-2">Peso:</p>
               <input
@@ -231,6 +241,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.weight}
+                {...formik.getFieldProps("weight")}
               />
               <p className="mr-2">Sexo:</p>
               <input
@@ -240,6 +251,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.sex}
+                {...formik.getFieldProps("sex")}
               />
               <p className="ml-2">microchip:</p>
               <input
@@ -249,6 +261,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.microchip}
+                {...formik.getFieldProps("microchip")}
               />
               <p className="ml-2">Esterilizado:</p>
               <input
@@ -258,6 +271,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={formik.values.sterilized}
+                {...formik.getFieldProps("sterilized")}
               />
               <p>SI</p>
               <input
@@ -267,6 +281,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={!formik.values.sterilized}
+                {...formik.getFieldProps("notSterilized")}
               />
               <p>NO</p>
             </span>
@@ -279,6 +294,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={formik.values.dietConcentrated}
+                {...formik.getFieldProps("dietConcentrated")}
               />
               <p>Concentrado</p>
               {formik.values.dietConcentrated && (
@@ -291,6 +307,7 @@ const ClinicHistory = () => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.dietConcentratedName}
+                    {...formik.getFieldProps("dietConcentratedName")}
                   />
                 </>
               )}
@@ -301,6 +318,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={formik.values.dietSaltFood}
+                {...formik.getFieldProps("dietSaltFood")}
               />
               <p>Comida de sal</p>
               <input
@@ -310,6 +328,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={formik.values.dietBARF}
+                {...formik.getFieldProps("dietBARF")}
               />
               <p>BARF</p>
               <p className="ml-12">Otro:</p>
@@ -320,6 +339,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.dietOther}
+                {...formik.getFieldProps("dietOther")}
               />
             </span>
 
@@ -332,6 +352,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={formik.values.surgeries}
+                {...formik.getFieldProps("surgeries")}
               />
               <p>SI</p>
               <input
@@ -341,6 +362,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={!formik.values.surgeries}
+                {...formik.getFieldProps("notSurgeries")}
               />
               <p>NO</p>
               {formik.values.surgeries && (
@@ -353,6 +375,7 @@ const ClinicHistory = () => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.surgeriesDetails}
+                    {...formik.getFieldProps("surgeriesDetails")}
                   />
                 </>
               )}
@@ -366,6 +389,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.pathologies}
+                {...formik.getFieldProps("pathologies")}
               />
               <p className="ml-96">Alergias:</p>
               <input
@@ -375,6 +399,7 @@ const ClinicHistory = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.allergies}
+                {...formik.getFieldProps("allergies")}
               />
             </span>
             <p className="ml-8 mt-4">Motivo de consulta:</p>
@@ -384,11 +409,10 @@ const ClinicHistory = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.reasonForConsultation}
+              {...formik.getFieldProps("reasonForConsultation")}
             />
           </div>
-        </form>
 
-        <form onSubmit={formik.handleSubmit}>
           <div className="block mt-4 ml-16 mr-16 relative bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
             <p className="text-lg flex justify-center mt-4 ">EXÁMEN FÍSICO</p>
             <span className="flex justify-center mt-6">
@@ -400,6 +424,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.temperature}
+                  {...formik.getFieldProps("temperature")}
                 />
                 °C
               </p>
@@ -411,6 +436,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.heartRate}
+                  {...formik.getFieldProps("heartRate")}
                 />
                 LPM
               </p>
@@ -422,6 +448,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.respiratoryRate}
+                  {...formik.getFieldProps("respiratoryRate")}
                 />
                 RPM
               </p>
@@ -433,6 +460,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.spo2}
+                  {...formik.getFieldProps("spo2")}
                 />
                 %
               </p>
@@ -444,6 +472,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.tllc}
+                  {...formik.getFieldProps("tllc")}
                 />
                 SEG
               </p>
@@ -457,6 +486,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.glucometry}
+                  {...formik.getFieldProps("glucometry")}
                 />
                 MG/DL
               </p>
@@ -468,6 +498,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.bloodPressure}
+                  {...formik.getFieldProps("bloodPressure")}
                 />
                 MMGH
               </p>
@@ -479,6 +510,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.mucosas}
+                  {...formik.getFieldProps("mucosas")}
                 />
               </p>
               <p>
@@ -489,6 +521,7 @@ const ClinicHistory = () => {
                   className="border-b w-20 border-black"
                   onChange={formik.handleChange}
                   value={formik.values.cc}
+                  {...formik.getFieldProps("cc")}
                 />
               </p>
             </span>
@@ -511,20 +544,23 @@ const ClinicHistory = () => {
             </div>
             <p className="ml-8 mt-4">Observaciones:</p>
             <textarea
-              name="reasonForConsultation"
+              name="observations"
               className="w-full px-4 py-16"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.reasonForConsultation}
+              {...formik.getFieldProps("observations")}
             />
           </div>
+          <div className="flex justify-end mt-2 mr-10">
+            <button type="submit">
+              <FontAwesomeIcon
+                icon={faFloppyDisk}
+                className=" text-3xl mr-12"
+              />
+            </button>
+          </div>
         </form>
-
-        <div className="flex justify-end mt-2 mr-10">
-          <button type="submit">
-            <FontAwesomeIcon icon={faFloppyDisk} className=" text-3xl mr-12" />
-          </button>
-        </div>
 
         <label className="flex ml-16">
           <div>

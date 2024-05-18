@@ -9,8 +9,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { useFormik } from "formik";
+import { actionAddVaccination } from "../redux/vaccination/vaccinationActions";
+import { useDispatch } from "react-redux";
 
 const Vaccination = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       hcNumber: "",
@@ -30,8 +33,18 @@ const Vaccination = () => {
       mucosas: "",
       cc: "",
       observations: "",
+      //vacunacion
+      vaccination: "",
+      loteVaccination: "",
+      nextVaccination: "",
+      lab: "",
+      // desparasitación
+      deworming: "",
+      nextDeworming: "",
     },
     onSubmit: (values) => {
+      dispatch(actionAddVaccination(values));
+      alert("Vacunación/Desparasitación guardado de forma exitosa");
       console.log(values);
     },
   });
@@ -188,9 +201,7 @@ const Vaccination = () => {
               </div>
             </div>
           </div>
-        </form>
 
-        <form onSubmit={formik.handleSubmit}>
           <div className="block mt-4 ml-16 mr-16 relative bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
             <p className="text-lg flex justify-center mt-4 ">EXÁMEN FÍSICO</p>
             <span className="flex justify-center mt-6">
@@ -296,16 +307,14 @@ const Vaccination = () => {
             </span>
             <p className="ml-8 mt-4">Observaciones:</p>
             <textarea
-              name="reasonForConsultation"
+              name="observation"
               className="w-full px-4 py-16"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.reasonForConsultation}
+              value={formik.values.observations}
             />
           </div>
-        </form>
 
-        <form onSubmit={formik.handleSubmit}>
           <div className="block mt-4 ml-16 mr-16 relative bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
             <p className="text-lg flex justify-center mt-4 ">VACUNACIÓN</p>
             <span className="flex mt-6 ml-8">
@@ -313,50 +322,50 @@ const Vaccination = () => {
                 Vacuna administrada:{" "}
                 <input
                   type="text"
-                  name="glucometry"
+                  name="vaccination"
                   className=" w-40 mr-40"
                   onChange={formik.handleChange}
-                  value={formik.values.glucometry}
+                  value={formik.values.vaccination}
                 />
               </p>
               <p className="mr-20">
                 LOTE:{" "}
                 <input
                   type="text"
-                  name="bloodPressure"
+                  name="loteVaccination"
                   className="w-40 mr-40"
                   onChange={formik.handleChange}
-                  value={formik.values.bloodPressure}
+                  value={formik.values.loteVaccination}
                 />
               </p>
               <p className="mr-20">
                 Laboratorio:{" "}
                 <input
                   type="text"
-                  name="mucosas"
+                  name="lab"
                   className="w-40"
                   onChange={formik.handleChange}
-                  value={formik.values.mucosas}
+                  value={formik.values.lab}
                 />
               </p>
             </span>
             <p className="ml-8 mt-4">Observaciones:</p>
             <textarea
-              name="reasonForConsultation"
+              name="observations"
               className="w-full px-4 py-16"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.reasonForConsultation}
+              value={formik.values.observations}
             />
             <span className="flex justify-between mr-20 mt-6 ml-8 mb-10">
               <p className="ml-8 pb-4">
                 PRÓXIMA VACUNACIÓN:{" "}
                 <input
                   type="text"
-                  name="glucometry"
+                  name="nextVaccination"
                   className=" w-40 border-b border-black"
                   onChange={formik.handleChange}
-                  value={formik.values.glucometry}
+                  value={formik.values.nextVaccination}
                 />
               </p>
               <p>
@@ -365,9 +374,7 @@ const Vaccination = () => {
               </p>
             </span>
           </div>
-        </form>
 
-        <form onSubmit={formik.handleSubmit}>
           <div className="block mt-4 ml-16 mr-16 relative bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
             <p className="text-lg flex justify-center mt-4 ">DESPARASITACIÓN</p>
             <span className="flex mt-6 ml-8">
@@ -375,10 +382,10 @@ const Vaccination = () => {
                 Producto administrado:{" "}
                 <input
                   type="text"
-                  name="glucometry"
+                  name="deworming"
                   className=" w-40 mr-40"
                   onChange={formik.handleChange}
-                  value={formik.values.glucometry}
+                  value={formik.values.deworming}
                 />
               </p>
               <input type="checkbox" className="ml-40 mr-2 w-6 h-6" />
@@ -388,21 +395,21 @@ const Vaccination = () => {
             </span>
             <p className="ml-8 mt-4">Observaciones:</p>
             <textarea
-              name="reasonForConsultation"
+              name="observations"
               className="w-full px-4 py-16"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.reasonForConsultation}
+              value={formik.values.observations}
             />
             <span className="flex justify-between mr-20 mt-6 ml-8 mb-10">
               <p className="ml-8 pb-4">
                 PRÓXIMA DESPARASITACIÓN:{" "}
                 <input
                   type="text"
-                  name="glucometry"
+                  name="nextDeworming"
                   className=" w-40 border-b border-black"
                   onChange={formik.handleChange}
-                  value={formik.values.glucometry}
+                  value={formik.values.nextDeworming}
                 />
               </p>
               <p>
@@ -411,13 +418,15 @@ const Vaccination = () => {
               </p>
             </span>
           </div>
+          <div className="flex justify-end mt-2 mr-10">
+            <button type="submit">
+              <FontAwesomeIcon
+                icon={faFloppyDisk}
+                className=" text-3xl mr-12"
+              />
+            </button>
+          </div>
         </form>
-
-        <div className="flex justify-end mt-2 mr-10">
-          <button type="submit">
-            <FontAwesomeIcon icon={faFloppyDisk} className=" text-3xl mr-12" />
-          </button>
-        </div>
       </div>
     </>
   );

@@ -9,8 +9,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { useFormik } from "formik";
+import { actionAddProcedure } from "../redux/procedure/procedureActions";
+import { useDispatch } from "react-redux";
 
 const Procedure = () => {
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       hcNumber: "",
@@ -30,9 +34,15 @@ const Procedure = () => {
       mucosas: "",
       cc: "",
       observations: "",
+      //notas de enfermería
+      procedure: "",
+      medicines: "",
+      //evolution
+      evolution: "",
     },
     onSubmit: (values) => {
-
+      dispatch(actionAddProcedure(values));
+      alert("Procedimiento guardado de forma exitosa");
       console.log(values);
     },
   });
@@ -85,6 +95,7 @@ const Procedure = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.hcNumber}
+                {...formik.getFieldProps("hcNumber")}
               />
               <span className="absolute inset-0 mt-2 mr-10 flex justify-end text-lg">
                 00.00.0000
@@ -188,9 +199,7 @@ const Procedure = () => {
               </div>
             </div>
           </div>
-        </form>
 
-        <form onSubmit={formik.handleSubmit}>
           <div className="block mt-4 ml-16 mr-16 relative bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
             <p className="text-lg flex justify-center mt-4 ">EXÁMEN FÍSICO</p>
             <span className="flex justify-center mt-6">
@@ -296,65 +305,63 @@ const Procedure = () => {
             </span>
             <p className="ml-8 mt-4">Observaciones:</p>
             <textarea
-              name="reasonForConsultation"
+              name="observations"
               className="w-full px-4 py-16"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.reasonForConsultation}
+              value={formik.values.observations}
             />
           </div>
-        </form>
 
-        <form onSubmit={formik.handleSubmit}>
           <div className="block mt-4 ml-16 mr-16 relative bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
             <p className="text-lg flex justify-center mt-4 ">
               NOTAS DE ENFERMERÍA
             </p>
             <p className="ml-8 mt-4">Procedimiento realizado:</p>
             <textarea
-              name="reasonForConsultation"
+              name="nurse"
               className="w-full px-4 py-10"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.reasonForConsultation}
+              value={formik.values.nurse}
             />
             <p className="ml-8 mt-4">Medicamentos administrados:</p>
             <textarea
-              name="reasonForConsultation"
+              name="medicines"
               className="w-full px-4 py-10"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.reasonForConsultation}
+              value={formik.values.medicines}
             />
             <p className="ml-8 mt-4">Observaciones:</p>
             <textarea
-              name="reasonForConsultation"
+              name="observations"
               className="w-full px-4 py-10"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.reasonForConsultation}
+              value={formik.values.observations}
             />
           </div>
-        </form>
 
-        <form onSubmit={formik.handleSubmit}>
           <div className="block mt-4 ml-16 mr-16 relative  bg-white border border-secondary focus:outline-none focus:border-secondary focus:ring-secondary rounded-xl sm:text-xl focus:ring-1 ">
             <p className="text-lg flex justify-center mt-2">EVOLUCIÓN</p>
             <textarea
-              name="reasonForConsultation"
+              name="evolution"
               className="w-full px-4 py-16"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.reasonForConsultation}
+              value={formik.values.evolution}
             />
           </div>
+          <div className="flex justify-end mt-2 mr-10">
+            <button type="submit">
+              <FontAwesomeIcon
+                icon={faFloppyDisk}
+                className=" text-3xl mr-12"
+              />
+            </button>
+          </div>
         </form>
-
-        <div className="flex justify-end mt-2 mr-10">
-          <button type="submit">
-            <FontAwesomeIcon icon={faFloppyDisk} className=" text-3xl mr-12" />
-          </button>
-        </div>
       </div>
     </>
   );
