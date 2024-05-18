@@ -38,20 +38,12 @@ const Patients = () => {
         />
       </label>
 
-      <label className="flex justify-center">
-        <div className="absolute mr-60 pointer-events-none">
-          <FontAwesomeIcon
-            icon={faPaw}
-            className="text-white mt-16 text-2xl py-6 pr-8"
-          />
-        </div>
-        <input
-          type="text"
-          name="new-patient"
-          className=" mt-20  pl-20 pr-10 py-2 bg-secondary border shadow-lg border-secondary placeholder-white focus:outline-none focus:border-secondary focus:ring-secondary block  rounded-xl sm:text-xl focus:ring-1"
-          placeholder="AGREGAR NUEVO PACIENTE"
-        />
-      </label>
+      <div className="flex justify-center">
+            <button className="bg-secondary shadow-lg mb-4 mt-10 hover:bg-primary text-white py-3 px-16 lg:text-left lg:inline-block lg:mr-2 rounded-xl sm:text-2xl">
+              <FontAwesomeIcon icon={faPaw} className="mr-2" />
+              AGREGAR NUEVO PACIENTE
+            </button>
+      </div>
 
       <div className="flex justify-end mt-20 mr-10">
         <FontAwesomeIcon
