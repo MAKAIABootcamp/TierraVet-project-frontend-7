@@ -52,7 +52,6 @@ const ClinicHistory = () => {
       observations: "",
     },
     onSubmit: (values) => {
-
       console.log(values);
     },
   });
@@ -219,7 +218,7 @@ const ClinicHistory = () => {
               <input
                 type="text"
                 name="age"
-                className="mr-2 py-1"
+                className="mr-4 w-24 py-1"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.age}
@@ -228,7 +227,7 @@ const ClinicHistory = () => {
               <input
                 type="text"
                 name="weight"
-                className="mr-2 py-1 "
+                className="mr-4 w-24 py-1 "
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.weight}
@@ -237,7 +236,7 @@ const ClinicHistory = () => {
               <input
                 type="text"
                 name="sex"
-                className="mr-2 py-1"
+                className="mr-4 w-24 py-1"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.sex}
@@ -246,7 +245,7 @@ const ClinicHistory = () => {
               <input
                 type="text"
                 name="microchip"
-                className="ml-2 py-1"
+                className="ml-4 py-1"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.microchip}
@@ -493,23 +492,21 @@ const ClinicHistory = () => {
                 />
               </p>
             </span>
-            <div className="inline-grid grid-cols-4 gap-4 mt-10 ml-40">
+            <div className="inline-grid grid-cols-4 gap-10 mt-10 ml-40">
               <img
-                src="https://s3-alpha-sig.figma.com/img/62c8/0e0e/654b9afbbaafeb8a831abe12dc4b9059?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dtJWliCgsZE5BhWY~rJgLSaR7IZbyVvjmuXKheThnERYW1KzoO1GnpRD6JBJR5xVjQqcfbYfZbPfEQKBi2nGIc9gNKBy5d0HlRB9fRedhWgGm8kktXdoSZ-2W-bx47lTT3P2YGapp2LFoE86635bO0lOEN5RJRNKgUIqUH2i4knUGmqI-ZruD1X~iH5Mu-~KwszyGI3x9YohQvRGjZV9ZOkEgp1y2pQz8Yf11sU~Gkn0qeYnRf9CAIECjw2ITcMn-US~KaDavkxatUOAG92g2k2014K0FhYBx2nK6A3BzKDEe0z9Lak98O-TCfsmtFDLmENBdOgXxKHVOY6SswaNNg__"
+                src="https://i.ibb.co/XtzPJZ8/dog2.png"
                 alt="dog-position4"
               />
+              <img src="https://i.ibb.co/SXt5xHR/dog.png" alt="dog-position3" />
               <img
-                src="https://s3-alpha-sig.figma.com/img/cb8e/82a6/aae3b9549dce3725e2e6ce207e3590e5?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JcegsxVm5ITEZ1l6a~Uq1CBVemalwjo1BwyMIYyIOc1~n4ojgLH24~0KJuV3RobXz6WrmuGtPr0~dGKhTGIfMseOsf1u-reQJhrgIjeTVW12E2ac0nY5LJAfLW8rd-mF8FxQPqOs6LOKM8u3TZzZprLeOmLt9pmjqt6sGLQtO5nefaVea11TFHMOt8vTxGlY2UMhl1lV0Ybs7pJ-YR7Sg9Z5aAsyiZ-vQjP~F4nplajWAwaL4JM0QgqYC8fxu2rQfpN7f2K98CoBQH8lXoE4a~GQB5zhzmLbgZFgzgsm5yTATbTY2OHnrDiNHXTZdVXNUPTCY8QobfnQNs6KZUPbHw__"
-                alt="dog-position3"
-              />
-              <img
-                src="https://s3-alpha-sig.figma.com/img/39c0/d99a/feb825a72ccbca5363f765ea21c471cb?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C~lEDjgyrg9My5eYRPVsqNuouJbMizQfu48XX1Eoq2~8YWBFLzYT9RvJYj-jYYKbgnK07VWnllKVKQdQL1cxLPXaiLrFQSRwBy7EdVDOkr32bflbtKcxLgvHujHQ5VantlXnX30xBh7qDxId6lNylZhYGFMyZdQLjctIBRu8vkpfacw9JEY~c3gUytMYkwwU4iUf5d1TUDN9E~gmBBmfAX14MTNtSbjOxuEnfR0cQ0QXOfooHxNm-PDlRDGQfg-kM8ixkCg0swPaOvOxsko2WQ5ORXQQvMqUO4LjKxMYqnexkUCpkb21NLQ0qZbIiEkr6HEpFes5zlEepgWdhvCPPg__"
-                alt="dog-position2"
-              />
-              <img
-                src="https://s3-alpha-sig.figma.com/img/cfcd/0a78/e301e32d9cd0ba3343c96c1bd1f4aff5?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pEy59ZhnXNRvNiUg8SlwsHIAbzZxmAXjweMvE3T19MzKjZUsmyfAoRg~YiUgY5YFn5evH9InTTbgvOHbCrBmpg95JkI3syi2Ti8Q04C9aBTxr1llCCd2c26X6-eUKcFHH45HjcVqANAK0~rVjXj20xvDDXW60fKxw~YzZguw8oJWDXrYGoywpyIzb5-aUx4VtyTuWi7fqsMpG5LGad4Hk4A9taV3DYQ38MGav1rOqC7dGzErnMhJRR6NbhwTgEtkUrWOaWCH6dvuqh-PgQuFHla1iK4hmZ81ZgMzfivYjMpHBkeAXagGPvMx~kaYB1PjBE4cxI1AsWqYeqwZdK514Q__"
+                src="https://i.ibb.co/fvwkp8K/dogp.jpg"
                 alt="dog-position1"
-                className="w-24"
+                className=""
+              />
+              <img
+                src="https://i.ibb.co/DbCd2GF/Imagen2.png"
+                alt="dog-position2"
+                className="w-20"
               />
             </div>
             <p className="ml-8 mt-4">Observaciones:</p>

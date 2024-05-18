@@ -381,7 +381,7 @@ const Vaccination = () => {
                   value={formik.values.glucometry}
                 />
               </p>
-              <input type="checkbox" className="ml-80 mr-2 w-6 h-6" />
+              <input type="checkbox" className="ml-40 mr-2 w-6 h-6" />
               INTERNOS
               <input type="checkbox" className="ml-20 mr-2 w-6 h-6" />
               EXTERNOS
