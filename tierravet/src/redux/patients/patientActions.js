@@ -10,10 +10,12 @@ export const actionAddPatient = (newPatient) => {
     dispatch(patientsRequest());
     try {
       const patientRef = addPatient(collectionRef, newPatient);
-      dispatch(fillPatients({
-        id:patientRef,
-        ...newPatient
-      }))
+      dispatch(
+        fillPatients({
+          id: patientRef,
+          ...newPatient,
+        })
+      );
     } catch (error) {
       console.error(error);
       dispatch(patientsFail(error.message));

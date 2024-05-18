@@ -1,11 +1,11 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const patientSlice = createSlice({
-  name: 'Patients',
+  name: "Patients",
   initialState: {
-    patients:[],
+    patients: [],
     isLoadiingPatients: false,
-    errorPatients: null
+    errorPatients: null,
   },
   reducers: {
     patientsRequest: (state) => {
@@ -18,7 +18,8 @@ const patientSlice = createSlice({
       state.errorPatients = null;
     },
     patientsFail: (state, action) => {
-      (state.isLoadiingPatients = false), (state.errorPatients = state.errorPatients);
+      (state.isLoadiingPatients = false),
+        (state.errorPatients = state.errorPatients);
     },
     addPatients: (state, action) => {
       state.patients.push(action.payload);
@@ -27,23 +28,23 @@ const patientSlice = createSlice({
     editPatients: (state, action) => {
       state.isLoadiingPatients = false;
       state.patients = state.patients.map((item) =>
-      action.payload.id ==item.id ? {...item, ...action.payload} : item
-      )
-    }, 
+        action.payload.id == item.id ? { ...item, ...action.payload } : item
+      );
+    },
     deletedPatient: (state, action) => {
       state.isLoadiingPatients = false;
       state.patients = state.patients.filter(action.payload);
-    }
-  }
-})
+    },
+  },
+});
 
 export const {
-  patientsRequest, 
-  fillPatients, 
-  patientsFail, 
-  addPatients, 
-  editPatients, 
-  deletedPatient
+  patientsRequest,
+  fillPatients,
+  patientsFail,
+  addPatients,
+  editPatients,
+  deletedPatient,
 } = patientSlice.actions;
 
-export default patientSlice.reducer
+export default patientSlice.reducer;
