@@ -106,11 +106,11 @@ const Login = () => {
           <button type="submit" className="bg-secondary hover:bg-primary text-white py-3 px-16 rounded-lg mt-4">
             {isLoading ? <Cargando /> : "Ingresar"}
           </button>
-          <button type="button" className="bg-primary hover:bg-secondary text-white py-3 px-16 rounded-lg mt-4 flex items-center" onClick={handleGoogleSignIn}>
+          <button type="button" className="bg-secondary hover:bg-primary text-white py-3 px-16 rounded-lg mt-4 flex items-center" onClick={handleGoogleSignIn}>
             <FontAwesomeIcon icon={faUserPlus} className="mr-2" /> Iniciar sesión con Google
           </button>
         </form>
-        <NavLink to="/register" className="bg-primary hover:bg-secondary text-white py-3 px-16 rounded-lg mt-4 flex items-center">
+        <NavLink to="/register" className="bg-secondary hover:bg-primary text-white py-3 px-16 rounded-lg mt-4 flex items-center">
           <FontAwesomeIcon icon={faUserPlus} className="mr-2" /> Registrarse
         </NavLink>
       </div>

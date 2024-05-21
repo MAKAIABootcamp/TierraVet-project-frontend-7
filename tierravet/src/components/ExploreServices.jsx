@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 const ExploreServices = () => {
   return (
@@ -8,9 +9,9 @@ const ExploreServices = () => {
         <h2 className="text-lg font-semibold mb-4 bg-primary text-white inline-block p-2 rounded-lg">Seguimiento Excepcional</h2>
         <p className="text-md font-bold mb-4">Rápido, sencillo y eficiente.</p>
         <p className="text-sm mb-4">Una forma innovadora y ordenada de organizar datos y registros veterinarios.</p>
-        <button className="bg-transparent text-blue-300">
+        <Link className="bg-transparent text-blue-300" to="/aboutUs" >
           Explorar Servicios
-        </button>
+        </Link>
       </div>
     </div>
   );

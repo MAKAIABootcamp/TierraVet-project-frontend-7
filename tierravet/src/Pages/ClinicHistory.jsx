@@ -539,7 +539,7 @@ const ClinicHistory = () => {
               <img
                 src="https://i.ibb.co/DbCd2GF/Imagen2.png"
                 alt="dog-position2"
-                className="w-20"
+                className="w-28"
               />
             </div>
             <p className="ml-8 mt-4">Observaciones:</p>
